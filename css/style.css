@@ -1,0 +1,352 @@
+/* For debugging purpose only! */
+/* *{
+    border: 1px solid;
+} */
+
+/* Body Style */
+body{
+    font-family: 'Shippori Mincho', sans-serif;
+    background-color: #efebe7;
+    background-image: url('sakura-petals.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Header and Logo Style */
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-logo{
+    width: 150px;
+    height: 150px;
+    background-image: url("logo.png");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+/* Home header */
+.home-header{
+    margin-top: 10px;
+    text-align: center; 
+}
+
+.home-header h1{
+    font-size: 50px;
+}
+
+/* Nav Style */
+nav{
+    display: flex;
+    margin-right: 20px;
+    background-color: rgb(235, 225, 210);
+    border-radius: 20%;
+}
+
+nav a {
+    color: black;
+    text-decoration: none;
+    padding: 10px;
+}
+
+nav a:hover{
+    background-color: rgb(249, 238, 223);
+    border-radius: 25%;
+}
+
+/* Banner & Form Section Style */
+.banner-form-container{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+}
+
+.banner{
+    flex: 1.5;
+}
+
+/* Automated Banner Style */
+.slideshow-container{
+    position: relative;
+    max-width: 500px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 25%;
+}
+
+.slide{
+    display: none;
+    width: 100%;
+}
+
+.slide img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+/* Fade animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade{
+    from {opacity: 0.4;}
+    to {opacity: 1;}
+}
+
+/* Form Style */
+.form-section{
+    flex: 0.5;
+    padding: 15px;
+    border: 2px solid tan;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: rgb(235, 220, 198);
+    margin-right: 20px;
+} 
+
+.form-section h2{
+    text-align: center;
+}
+
+.form-section p{
+    font-size: 15px;
+}
+
+/* Style inputs and select elements */
+input[type = text], select{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dfc6ae;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Style the labels */
+label{
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Style placeholder and options */
+input::placeholder, select, option{
+    font-family: 'Shippori Mincho', sans-serif;;
+}
+
+/* Style the submit button */
+button[type = button]{
+    background-color: burlywood;
+    color: white;
+    padding: 12px 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover{
+    background-color: rgb(234, 205, 165);
+}
+
+/* Style the Testimonials and Offers Section */
+.about-us, .testimonials{
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f5ece0;
+    border-radius: 10px;
+}
+
+.about-us h2, .testimonials h2{
+    margin-bottom: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.offer-list{
+    counter-reset: offer-counter;
+    list-style: none;
+    padding-left: 0;
+}
+
+.offer-list li{
+    counter-increment: offer-counter;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 20px;
+    text-align: justify;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.offer-list li::before{
+    content: counter(offer-counter);
+    position: absolute;
+    left: 0;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(224, 197, 161);
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 25px;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.offer-list li:hover::before{
+    background-color: rgb(234, 205, 165);
+}
+
+.testimonials blockquote {
+    font-style: italic;
+    margin: 10px 0;
+    padding-left: 15px;
+    border-left: 3px solid burlywood;
+}
+
+/* Our Package Section Style */
+
+.sub-content{
+    min-height: 300px;
+    align-content: center;
+    text-align: center;
+}
+
+.package-title{
+    text-align: center;
+}
+
+.package-header{
+    padding: 10px;
+    background-color: rgb(241, 215, 219);
+    opacity: 0.75;
+    
+}
+
+.package-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+    text-align: justify;
+    margin-left: 20px;
+    margin-right: 20px;
+    counter-reset: package-counter;
+}
+
+.package{
+    position: relative;
+    padding-left: 40px;
+}
+
+.package h3, .package p{
+    margin-left: 25px;
+}
+
+
+.package h3::before{
+    counter-increment: package-counter;
+    content: counter(package-counter);
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background-color: rgb(224, 197, 161);
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    margin-right: 10px;
+    position: absolute;
+    left: 0;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.package h3:hover::before{
+    background-color: rgb(234, 205, 165);
+}
+
+/* Call Us Section Style */
+.sub-content-2{
+    min-height: 250px;
+    align-content: center;
+    text-align: center;
+    background-color: rgb(241, 215, 219);
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.closing button{
+    background-color: rgb(232, 199, 156);
+    color: white;
+    padding: 12px 100px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.closing button:hover{
+    background-color: rgb(234, 205, 165);
+}
+
+
+/* Footer Style */
+footer{
+    text-align: center;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px){
+    .main-header{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav{
+        flex-direction: row;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .home-header{
+        align-items: center;
+    }
+
+    .banner-form-container {
+        flex-direction: column;
+    }
+
+    .form-section, .banner {
+        width: 100%;
+    }
+
+    button[type = button] {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .package-grid{
+        grid-template-columns: 1fr;
+    }
+
+    .package{
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+}
